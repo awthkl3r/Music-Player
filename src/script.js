@@ -12,7 +12,7 @@ const init = async () => {
 
     } catch (error) {
         console.log('User is not logged in');
-        if (window.location.pathname.endsWith('/index.html') || window.location.pathname.endsWith('/') || window.location.pathname.endsWith('')) {
+        if (window.location.pathname.endsWith('/index.html') || window.location.pathname.endsWith('')) {
             window.location.href = '/src/Login.html';
         }
     }
