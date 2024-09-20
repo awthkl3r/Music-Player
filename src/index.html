@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100vh;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="Storage.js"></script>
+    <link rel="stylesheet" href="../Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Bootstrap/icons-main/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="height: 100vh;" class="d-flex flex-column justify-content-between overflow-x-hidden">
+
+    <nav class="navbar bg-none text-white">
+
+        <div class="container-fluid">
+            <span class="navbar-text text-white d-flex flex-row gap-3">
+                <h2 class="d-flex justify-content-center flex-row align-items-center">
+                    <div id="user-info"></div> 's
+                </h2>
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <a class="navbar-brand text-white" href="#">
+                        <h2>Music Player.</h2>
+                    </a>
+                </div>
+            </span>
+
+            <div class="">
+                <ul class="navbar-nav d-flex flex-row gap-2">
+
+
+
+                    <li class="nav-item d-flex flex-row align-items-center justify-content-center">
+                        <button class="google-login-btn visibility-hidden" id="google-login-btn">Sign in with
+                            Google</button>
+
+                        <button id="logout-btn" class="nav-link active  text-white" aria-current="page" href="#">Log
+                            out</button>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <section class="d-flex flex-row justify-content-evenly flex-grow-1">
+        <div class="p-3 d-flex flex-column" style="width: 100%; height: 100%;">
+            <h2 class="text-center">My Playlist</h2>
+            <ul class="music-list" id="music-list"></ul>
+        </div>
+
+        <div class="p-3 d-flex flex-column justify-content-around" style="width: 100%; height: 100%;">
+            <h2 class="text-center">Select an MP3 file,<br>then upload it.</h2>
+            <!-- <button id="logout-btn" style="display: none; width: fit-content;">Logout</button> -->
+            <div class="w-100 d-flex flex-column gap-1 align-items-center justify-content-center">
+                <input type="file" id="file-input" accept=".mp3" hidden>
+                <label for="file-input" id="file-input-label">Select MP3</label>
+                <button id="upload-btn">Upload MP3</button>
+                <script>
+                    document.getElementById('file-input').addEventListener('change', function () {
+                        const fileName = this.files[0] ? this.files[0].name : 'Select MP3';
+                        document.getElementById('file-input-label').textContent = fileName;
+                        document.getElementById('upload-btn').style.display = 'block';
+                        document.getElementById('upload-btn').style.visibility = 'visible';
+                    });
+                </script>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal fade" id="renameModal" tabindex="-1" aria-labelledby="renameModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="renameModalLabel">Rename Music</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="newNameInput" class="form-control" placeholder="Enter new name">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveNewNameBtn">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="border-danger white sticky-bottom d-flex flex-row justify-content-evenly align-items-center"
+        style="width: 100vw; height: 8vh;">
+        <audio id="audio-player" controls></audio>
+        <button id="repeat-btn" class="btn btn-light h-100 rounded-0">
+            <i class="bi bi-repeat"></i>
+        </button>
+    </section>
+
+    <script type="module" src="script.js"></script>
+    <script type="module" src="main.js"></script>
+    <script src="../Bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

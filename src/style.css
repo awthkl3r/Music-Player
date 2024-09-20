@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* padding: 20px; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: white;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: 20px; */
+    /* align-items: center;
+    justify-content: center;   */
+}
+
+#music-list {
+    list-style-type: none;
+    /* padding: 0; */
+}
+
+#music-list li {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #ccc;
+    color: #111;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#music-list li:hover {
+    background-color: #ccc;
+    color: #111;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#audio-player {
+    width: 100%;
+    outline: none;
+    background-color: #eee;
+    height: 100%;
+}
+
+#file-input-label {
+    width: 50%;
+    background-color: #eee;
+    color: #111;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    text-align: center;
+    cursor: pointer;
+    height: 100%;
+    border: none;
+    /* margin-top: 1rem; */
+}
+
+#upload-btn {
+    display: none;
+    visibility: hidden;
+    width: 50%;
+    background-color: #eee;
+    color: #111;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    height: 100%;
+    /* margin-top: 1rem; */
+}
+
+.music-item {
+    position: relative;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.music-item:hover .delete-btn {
+    display: block;
+}
+
+.rename-btn {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.music-item:hover .rename-btn {
+    display: block;
+}
+
+.rename-input {
+    background-color: #eee;
+    color: #111;
+    border: none;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 14px;
+    width: 70%;
+}
+
+.rename-done-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.rename-done-btn:hover {
+    background-color: #45a049;
+}
