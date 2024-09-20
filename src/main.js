@@ -2,7 +2,7 @@ import {
     uploadMusic,
     getUserMusic,
     deleteMusic
-} from './storage.js';
+} from './Storage.js';
 import {
     login,
     checkAuthState
