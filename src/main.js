@@ -151,8 +151,9 @@ logoutBtn.addEventListener('click', () => {
     signOut(auth).then(() => {
         console.log('User signed out');
         localStorage.removeItem('user');
-        window.location.href = 'Login.html';
+        window.location.href = '/src/Login.html';
     }).catch((error) => {
+
         console.error('Error signing out:', error);
     });
 });
